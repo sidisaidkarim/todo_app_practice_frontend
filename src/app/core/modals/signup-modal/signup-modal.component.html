@@ -1,0 +1,69 @@
+<div
+  class="modal fade in"
+  [ngClass]="{ show: modalOpen, fade: !modalOpen }"
+  aria-hidden="false"
+  [style.display]="modalOpen ? 'block' : 'none'"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h1 class="mb-3">Sign up to todo list</h1>
+        <form>
+          <div class="d-inline-flex justify-content-between">
+            <div class="form-group" style="width: 47%">
+              <label for="firstName">Prenom</label>
+              <input
+                type="text"
+                class="form-control"
+                id="firstName"
+                placeholder="Prenom"
+              />
+            </div>
+            <div class="form-group" style="width: 47%">
+              <label for="lastName">Nom</label>
+              <input
+                type="text"
+                class="form-control"
+                id="lastName"
+                placeholder="Nom"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="Email">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="Email"
+              placeholder="email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="Password">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="Password"
+              placeholder="Password"
+            />
+            <small id="passwordDescription" class="form-text text-muted"
+              >Doit contenir au minimum 6 caracteres</small
+            >
+          </div>
+
+          <div class="float-end">
+            <button type="button" (click)="submit()" class="btn btn-primary">
+              Valider
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="text-center p-2">
+        <p>
+          Have you an account ? <br />
+          <a>Login in</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
