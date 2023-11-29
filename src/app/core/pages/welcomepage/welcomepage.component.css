@@ -1,0 +1,15 @@
+.image-container {
+  background-image: url("../../../../assets/images/backgroundimg.jpeg");
+  height: 500px;
+  background-size: cover;
+}
+.content {
+  top: 40%;
+  left: 20%;
+  position: absolute;
+}
+.content h1 {
+  color: #fff;
+  font-size: 60px;
+  font-weight: bold;
+}
