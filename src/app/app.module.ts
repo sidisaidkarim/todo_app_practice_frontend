@@ -9,6 +9,7 @@ import { NavbarComponent } from './core/components/navbar/navbar.component';
 import { TasklistComponent } from './core/pages/tasklist/tasklist.component';
 import { SignupModalComponent } from './core/modals/signup-modal/signup-modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TasklistComponent,
     SignupModalComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, BrowserAnimationsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
