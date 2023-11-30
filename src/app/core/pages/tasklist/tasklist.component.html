@@ -6,6 +6,7 @@
         <th scope="col">Id</th>
         <th scope="col">Task</th>
         <th scope="col">Completed</th>
+        <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
@@ -13,6 +14,11 @@
         <th scope="row">{{ task.id }}</th>
         <td>{{ task.task }}</td>
         <td>{{ task.completed ? "Oui" : "Non" }}</td>
+        <td>
+          <button (click)="deleteTask(task.id)" class="btn btn-outlined-info">
+            <i class="fa fa-trash"></i>
+          </button>
+        </td>
       </tr>
     </tbody>
   </table>
