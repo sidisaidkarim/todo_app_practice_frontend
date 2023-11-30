@@ -1,21 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { GetTasksService } from '../../services/get-tasks.service';
+import { Task } from '../../model/task.model';
 
 @Component({
   selector: 'app-tasklist',
   templateUrl: './tasklist.component.html',
-  styleUrls: ['./tasklist.component.css']
+  styleUrls: ['./tasklist.component.css'],
 })
-export class TasklistComponent {
+export class TasklistComponent implements OnInit {
+  tasks: Task[] = [];
 
+  constructor(private getTasksService: GetTasksService) {}
 
-  // to be removed, just an example of how to use url in services
-  // since now we are using a proxy server, we don't call http://localhost/api/.. 
-  //we call directly /api/todo/
-  ngOnInit() {
-    fetch("/api/todo/")
-    .then(result=>result.json())
-    .then(data=>console.log(data))
-
+  ngOnInit(): void {
+    this.getTasksService.getTasks().subscribe((res) => {
+      this.tasks = res;
+    });
   }
-
 }

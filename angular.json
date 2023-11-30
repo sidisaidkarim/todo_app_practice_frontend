@@ -60,10 +60,12 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "forntend:build:production"
+              "browserTarget": "forntend:build:production",
+              "proxyConfig": "./proxy.conf.json"
             },
             "development": {
-              "browserTarget": "forntend:build:development"
+              "browserTarget": "forntend:build:development",
+              "proxyConfig": "./proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

@@ -1,1 +1,19 @@
-<p>tasklist works!</p>
+<div class="container py-5">
+  <h1 class="mb-3">TODO List for user : xxxx</h1>
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Task</th>
+        <th scope="col">Completed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks">
+        <th scope="row">{{ task.id }}</th>
+        <td>{{ task.task }}</td>
+        <td>{{ task.completed ? "Oui" : "Non" }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
