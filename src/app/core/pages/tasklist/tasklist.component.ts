@@ -16,8 +16,7 @@ export class TasklistComponent implements OnInit {
 
   constructor(
     private getTasksService: GetTasksService,
-    private deleteTaskService: DeteteTaskService
-  , private addTaskService: AddTaskService) {}
+    private deleteTaskService: DeteteTaskService, private addTaskService: AddTaskService) {}
 
   ngOnInit(): void {
     this.fetchData();
