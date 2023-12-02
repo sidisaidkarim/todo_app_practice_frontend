@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { GetTasksService } from '../../services/get-tasks.service';
 import { Task } from '../../model/task.model';
 import { DeteteTaskService } from '../../services/detete-task.service';
+import { AddTaskService } from '../../services/add-task.service';
+
 
 @Component({
   selector: 'app-tasklist',
@@ -10,11 +12,12 @@ import { DeteteTaskService } from '../../services/detete-task.service';
 })
 export class TasklistComponent implements OnInit {
   tasks: Task[] = [];
+  showAddTaskModal: boolean = false;
 
   constructor(
     private getTasksService: GetTasksService,
     private deleteTaskService: DeteteTaskService
-  ) {}
+  , private addTaskService: AddTaskService) {}
 
   ngOnInit(): void {
     this.fetchData();
@@ -33,5 +36,9 @@ export class TasklistComponent implements OnInit {
         console.error('Error during deletion:', error);
       }
     );
+  }
+
+  showAddTaskModel(){
+      this.addTaskService.setModalVisibility(true);
   }
 }

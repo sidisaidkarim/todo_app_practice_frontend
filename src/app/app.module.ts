@@ -10,6 +10,8 @@ import { TasklistComponent } from './core/pages/tasklist/tasklist.component';
 import { SignupModalComponent } from './core/modals/signup-modal/signup-modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { AddTaskModalComponent } from './core/modals/add-task-modal/add-task-modal.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     TasklistComponent,
     SignupModalComponent,
+    AddTaskModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     NgbModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
