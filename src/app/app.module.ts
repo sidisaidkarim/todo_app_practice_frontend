@@ -9,9 +9,11 @@ import { NavbarComponent } from './core/components/navbar/navbar.component';
 import { TasklistComponent } from './core/pages/tasklist/tasklist.component';
 import { SignupModalComponent } from './core/modals/signup-modal/signup-modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AddTaskModalComponent } from './core/modals/add-task-modal/add-task-modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpRequestInterceptor } from './core/interceptors/HttpRequestInterceptor';
+import { OAuthModule } from 'angular-oauth2-oidc';
 
 @NgModule({
   declarations: [
@@ -28,9 +30,16 @@ import { ReactiveFormsModule } from '@angular/forms';
     NgbModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    OAuthModule.forRoot(),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpRequestInterceptor,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
