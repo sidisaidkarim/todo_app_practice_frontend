@@ -9,4 +9,4 @@ export const AuthorizationCodeFlowConfig : AuthConfig = {
     postLogoutRedirectUri: window.location.origin,
     showDebugInformation: true,
     requireHttps: false
-}
+  };

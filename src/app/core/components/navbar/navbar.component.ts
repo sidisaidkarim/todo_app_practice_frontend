@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SignupModalService } from '../../services/signup-modal.service';
+import { OAuthService } from 'angular-oauth2-oidc';
 
 @Component({
   selector: 'app-navbar',
@@ -9,9 +10,13 @@ import { SignupModalService } from '../../services/signup-modal.service';
 export class NavbarComponent {
   showModal: boolean = false;
 
-  constructor(private signUpService: SignupModalService) {}
+  constructor(private signUpService: SignupModalService, private authService: OAuthService) {}
 
   showSignUpModal() {
     this.signUpService.setModalVisibility(true);
+  }
+
+  logOut(){
+    this.authService.logOut()
   }
 }

@@ -13,11 +13,10 @@ export class HttpRequestInterceptor implements HttpInterceptor{
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-        const accessToken = "test_fake_token321f3sdf3sdf13sd21f"//this.authService.getAccessToken();
-
-        console.log("interceptor executed")
+        const accessToken = this.authService.getAccessToken();
 
         if (accessToken != null) {
+            console.log("accessToken = ",accessToken)
             req = req.clone({
               headers: req.headers.set('Authorization', 'Bearer ' + accessToken),
             });
